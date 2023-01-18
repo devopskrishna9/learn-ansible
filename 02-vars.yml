@@ -9,6 +9,18 @@
         msg: URL == {{URL}}
 
 
+- name: Declare variable in anothe file
+  hosts: all
+  connection: local
+  vars_files:
+    - var.yml
+  tasks:
+    - name: Access variable
+      ansible.builtin.debug:
+        msg: URL == {{URL}}
+## vars_files can also be declared on task level.
+
+
 - name: Declare variable at Task level
   hosts: all
   connection: local
