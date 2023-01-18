@@ -43,3 +43,12 @@
 
  ## passing variable at cmd line
     ## syntax: git pull; ansible-playbook -i inv 02-vars.yml -e URL=cli.example.com
+
+## predefined variables in ansible
+- name: Declare variable from inventory file
+  hosts: all
+  connection: local
+  tasks:
+    - name: Access variable
+      ansible.builtin.debug:
+        msg: Ansible Host name == {{ansible_fqdn}}
