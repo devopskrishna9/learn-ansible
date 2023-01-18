@@ -20,7 +20,7 @@
         msg: URL == {{URL}}
 ## vars_files can also be declared on task level.
 
-
+## syntax: ansible-playbook -i localhost, 02-vars.yml
 - name: Declare variable at Task level
   hosts: all
   connection: local
@@ -31,7 +31,8 @@
       vars:
         URL: task.example.com
 
-
+## Syntax for inventory level file variable
+   ##  git pull; ansible-playbook -i inv 02-vars.yml
 - name: Declare variable from inventory file
   hosts: all
   connection: local
@@ -39,3 +40,6 @@
     - name: Access variable
       ansible.builtin.debug:
         msg: URL == {{URL}}
+
+ ## passing variable at cmd line
+    ## syntax: git pull; ansible-playbook -i inv 02-vars.yml -e URL=cli.example.com
