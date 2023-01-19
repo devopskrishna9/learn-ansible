@@ -1,13 +1,13 @@
 - name: loop concept
   hosts: all
   tasks:
-    - name: print fruit names
+    - name: Print fruit names
       debug:
         msg: fruit name is {{ item }}
         loop:
           - apple
           - banana
-    - name: print fruit name & quantity
+    - name: Print fruit name & quantity
       debug:
         msg: fruit name is {{ item.name }} & quantity is {{ item.quantity }}
         loop:
