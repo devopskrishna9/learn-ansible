@@ -4,12 +4,12 @@
     - name: Print fruit names
       debug:
         msg: fruit name is {{ item }}
-        loop:
+      loop:
           - apple
           - banana
     - name: Print fruit name & quantity
       debug:
         msg: fruit name is {{ item.name }} & quantity is {{ item.quantity }}
-        loop:
+      loop:
           - { name: "apple", quantity: 100 }
           - { name: "banana", quantity: 50 }
