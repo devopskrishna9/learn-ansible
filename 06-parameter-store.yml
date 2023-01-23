@@ -1,0 +1,7 @@
+- name: Read parameter from AWS through ansible
+  hosts: localhost
+  connection: local
+  tasks:
+    - name: Read from specified region
+      debug: msg="{{ lookup('aws_ssm', 'test', region='us-east-1' ) }}"
+#        msg: "{{ lookup('aws_ssm', 'test', region='us-east-1' ) }}"
